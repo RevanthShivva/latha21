@@ -1,5 +1,4 @@
-package solid_p;
-
+package solidPrinciples;
 import java.util.ArrayList;
 
 public class Main {
@@ -7,33 +6,34 @@ public class Main {
         College college = new College();
         college.setCollegeName("Vasavi College");
         college.setCity("Hyderabad");
-        college.accounts(50000,100000, 20000);
+        accounts acc = new accounts();
+        acc.accounts(50000,100000,20000);
+        canteen canteen1 = new canteen();
         ArrayList<String> f = new ArrayList<String>();
         f.add("Meals");
         f.add("Water Bottle");
-        college.canteen(f);
-        System.out.println("College name : " + college.getCollegeName() + " located in " + college.getCity() + " has a profit of" + College.b);
-        Student_marks_display s = new Student_marks_display();
-        Student_attendance st = new Student_attendance();
+        canteen1.canteen(f);
+        Student_marks_display studentMarksDisplay = new Student_marks_display();
+        Student_attendance studentAttendance = new Student_attendance();
         rec re = new rec();
-        re.show(s);
-        re.show(st);
+        re.show(studentMarksDisplay);
+        re.show(studentAttendance);
         TeacherAuthen teacherAuthen = new TeacherAuthen();
         teacherAuthen.login();
         teacherAuthen.modify_attendance();
         student_authen studentAuthen = new student_authen();
         studentAuthen.login();
         HOD hod  = new HOD();
+        hod.display_marks();
         hod.modify_marks();
         hod.calculate_grades();
         stu st1 = new stu();
         st1.display_marks();
-        st1.modify_marks();
-        st1.calculate_grades();
-        studentAuthen.modify_attendance();
-        CollegeDatabase p = new CollegeDatabase();
-        mysqlconnect m = new mysqlconnect();
-        p.connect(m);
-        m.connectionwiddata();
+        payment p = new payment();
+        mysqlconnect1 m = new mysqlconnect1();
+        p.connct(m);
+        m.connectwiddata();
+
+
     }
 }
